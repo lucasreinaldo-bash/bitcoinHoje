@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706925E5D97F005C8753 /* AppDelegate.swift */; };
+		83F1706C25E5D97F005C8753 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706B25E5D97F005C8753 /* SceneDelegate.swift */; };
+		83F1706E25E5D97F005C8753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706D25E5D97F005C8753 /* ViewController.swift */; };
+		83F1707125E5D97F005C8753 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F1706F25E5D97F005C8753 /* Main.storyboard */; };
+		83F1707325E5D981005C8753 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83F1707225E5D981005C8753 /* Assets.xcassets */; };
+		83F1707625E5D981005C8753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F1707425E5D981005C8753 /* LaunchScreen.storyboard */; };
+		83F1708125E5D982005C8753 /* bitcoinHojeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1708025E5D982005C8753 /* bitcoinHojeTests.swift */; };
+		83F1708C25E5D982005C8753 /* bitcoinHojeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1708B25E5D982005C8753 /* bitcoinHojeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		83F1707D25E5D982005C8753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83F1705E25E5D97F005C8753 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83F1706525E5D97F005C8753;
+			remoteInfo = bitcoinHoje;
+		};
+		83F1708825E5D982005C8753 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83F1705E25E5D97F005C8753 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 83F1706525E5D97F005C8753;
+			remoteInfo = bitcoinHoje;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		83F1706625E5D97F005C8753 /* bitcoinHoje.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoinHoje.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F1706925E5D97F005C8753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83F1706B25E5D97F005C8753 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		83F1706D25E5D97F005C8753 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83F1707025E5D97F005C8753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		83F1707225E5D981005C8753 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		83F1707525E5D981005C8753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83F1707725E5D981005C8753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83F1707C25E5D982005C8753 /* bitcoinHojeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bitcoinHojeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F1708025E5D982005C8753 /* bitcoinHojeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitcoinHojeTests.swift; sourceTree = "<group>"; };
+		83F1708225E5D982005C8753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83F1708725E5D982005C8753 /* bitcoinHojeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bitcoinHojeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		83F1708B25E5D982005C8753 /* bitcoinHojeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitcoinHojeUITests.swift; sourceTree = "<group>"; };
+		83F1708D25E5D982005C8753 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		83F1706325E5D97F005C8753 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1707925E5D982005C8753 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1708425E5D982005C8753 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		83F1705D25E5D97F005C8753 = {
+			isa = PBXGroup;
+			children = (
+				83F1706825E5D97F005C8753 /* bitcoinHoje */,
+				83F1707F25E5D982005C8753 /* bitcoinHojeTests */,
+				83F1708A25E5D982005C8753 /* bitcoinHojeUITests */,
+				83F1706725E5D97F005C8753 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		83F1706725E5D97F005C8753 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				83F1706625E5D97F005C8753 /* bitcoinHoje.app */,
+				83F1707C25E5D982005C8753 /* bitcoinHojeTests.xctest */,
+				83F1708725E5D982005C8753 /* bitcoinHojeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		83F1706825E5D97F005C8753 /* bitcoinHoje */ = {
+			isa = PBXGroup;
+			children = (
+				83F1706925E5D97F005C8753 /* AppDelegate.swift */,
+				83F1706B25E5D97F005C8753 /* SceneDelegate.swift */,
+				83F1706D25E5D97F005C8753 /* ViewController.swift */,
+				83F1706F25E5D97F005C8753 /* Main.storyboard */,
+				83F1707225E5D981005C8753 /* Assets.xcassets */,
+				83F1707425E5D981005C8753 /* LaunchScreen.storyboard */,
+				83F1707725E5D981005C8753 /* Info.plist */,
+			);
+			path = bitcoinHoje;
+			sourceTree = "<group>";
+		};
+		83F1707F25E5D982005C8753 /* bitcoinHojeTests */ = {
+			isa = PBXGroup;
+			children = (
+				83F1708025E5D982005C8753 /* bitcoinHojeTests.swift */,
+				83F1708225E5D982005C8753 /* Info.plist */,
+			);
+			path = bitcoinHojeTests;
+			sourceTree = "<group>";
+		};
+		83F1708A25E5D982005C8753 /* bitcoinHojeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				83F1708B25E5D982005C8753 /* bitcoinHojeUITests.swift */,
+				83F1708D25E5D982005C8753 /* Info.plist */,
+			);
+			path = bitcoinHojeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		83F1706525E5D97F005C8753 /* bitcoinHoje */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83F1709025E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHoje" */;
+			buildPhases = (
+				83F1706225E5D97F005C8753 /* Sources */,
+				83F1706325E5D97F005C8753 /* Frameworks */,
+				83F1706425E5D97F005C8753 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bitcoinHoje;
+			productName = bitcoinHoje;
+			productReference = 83F1706625E5D97F005C8753 /* bitcoinHoje.app */;
+			productType = "com.apple.product-type.application";
+		};
+		83F1707B25E5D982005C8753 /* bitcoinHojeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83F1709325E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHojeTests" */;
+			buildPhases = (
+				83F1707825E5D982005C8753 /* Sources */,
+				83F1707925E5D982005C8753 /* Frameworks */,
+				83F1707A25E5D982005C8753 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83F1707E25E5D982005C8753 /* PBXTargetDependency */,
+			);
+			name = bitcoinHojeTests;
+			productName = bitcoinHojeTests;
+			productReference = 83F1707C25E5D982005C8753 /* bitcoinHojeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		83F1708625E5D982005C8753 /* bitcoinHojeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 83F1709625E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHojeUITests" */;
+			buildPhases = (
+				83F1708325E5D982005C8753 /* Sources */,
+				83F1708425E5D982005C8753 /* Frameworks */,
+				83F1708525E5D982005C8753 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83F1708925E5D982005C8753 /* PBXTargetDependency */,
+			);
+			name = bitcoinHojeUITests;
+			productName = bitcoinHojeUITests;
+			productReference = 83F1708725E5D982005C8753 /* bitcoinHojeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83F1705E25E5D97F005C8753 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					83F1706525E5D97F005C8753 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					83F1707B25E5D982005C8753 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 83F1706525E5D97F005C8753;
+					};
+					83F1708625E5D982005C8753 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 83F1706525E5D97F005C8753;
+					};
+				};
+			};
+			buildConfigurationList = 83F1706125E5D97F005C8753 /* Build configuration list for PBXProject "bitcoinHoje" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 83F1705D25E5D97F005C8753;
+			productRefGroup = 83F1706725E5D97F005C8753 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				83F1706525E5D97F005C8753 /* bitcoinHoje */,
+				83F1707B25E5D982005C8753 /* bitcoinHojeTests */,
+				83F1708625E5D982005C8753 /* bitcoinHojeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		83F1706425E5D97F005C8753 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1707625E5D981005C8753 /* LaunchScreen.storyboard in Resources */,
+				83F1707325E5D981005C8753 /* Assets.xcassets in Resources */,
+				83F1707125E5D97F005C8753 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1707A25E5D982005C8753 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1708525E5D982005C8753 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		83F1706225E5D97F005C8753 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1706E25E5D97F005C8753 /* ViewController.swift in Sources */,
+				83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */,
+				83F1706C25E5D97F005C8753 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1707825E5D982005C8753 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1708125E5D982005C8753 /* bitcoinHojeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		83F1708325E5D982005C8753 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				83F1708C25E5D982005C8753 /* bitcoinHojeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		83F1707E25E5D982005C8753 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83F1706525E5D97F005C8753 /* bitcoinHoje */;
+			targetProxy = 83F1707D25E5D982005C8753 /* PBXContainerItemProxy */;
+		};
+		83F1708925E5D982005C8753 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 83F1706525E5D97F005C8753 /* bitcoinHoje */;
+			targetProxy = 83F1708825E5D982005C8753 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		83F1706F25E5D97F005C8753 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F1707025E5D97F005C8753 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		83F1707425E5D981005C8753 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				83F1707525E5D981005C8753 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		83F1708E25E5D982005C8753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		83F1708F25E5D982005C8753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		83F1709125E5D982005C8753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHoje/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHoje;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		83F1709225E5D982005C8753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHoje/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHoje;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		83F1709425E5D982005C8753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHojeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHojeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bitcoinHoje.app/bitcoinHoje";
+			};
+			name = Debug;
+		};
+		83F1709525E5D982005C8753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHojeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHojeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bitcoinHoje.app/bitcoinHoje";
+			};
+			name = Release;
+		};
+		83F1709725E5D982005C8753 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHojeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHojeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bitcoinHoje;
+			};
+			name = Debug;
+		};
+		83F1709825E5D982005C8753 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = bitcoinHojeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lucasreinaldo.bitcoinHojeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = bitcoinHoje;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		83F1706125E5D97F005C8753 /* Build configuration list for PBXProject "bitcoinHoje" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1708E25E5D982005C8753 /* Debug */,
+				83F1708F25E5D982005C8753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83F1709025E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHoje" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1709125E5D982005C8753 /* Debug */,
+				83F1709225E5D982005C8753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83F1709325E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHojeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1709425E5D982005C8753 /* Debug */,
+				83F1709525E5D982005C8753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83F1709625E5D982005C8753 /* Build configuration list for PBXNativeTarget "bitcoinHojeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83F1709725E5D982005C8753 /* Debug */,
+				83F1709825E5D982005C8753 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83F1705E25E5D97F005C8753 /* Project object */;
+}
