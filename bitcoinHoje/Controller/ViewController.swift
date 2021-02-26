@@ -8,21 +8,29 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CriptoManagerDelegate {
+    func erroRequest(error: Error) {
+        
+    }
     
+    
+    @IBOutlet weak var lastPriceLabel: UILabel!
     @IBOutlet weak var moedasPickerView: UIPickerView!
 
-
-    @IBOutlet weak var ultimoPrecoLabel: UILabel!
+    @IBOutlet weak var criptoImageView: UIImageView!
     
-    var valorBTC:String = "0"
+    
+
     
     var precoList:[Double] = []
     var moedasDestinoList: [Double] = []
+    var criptoKey: String = "BTC"
     var simboloMoedaList: [String] = ["BITCOIN","LITECOIN","XRP","ETHEREUM","BITCOIN CASH","CHAILINK"]
     
     
     var criptoConfig = CriptoConfig()
     
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +40,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         
         criptoConfig.buscarCripto(coinID:"BTC")
+        
+      
         
     }
  
@@ -63,16 +73,45 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         default:
             criptoConfig.buscarCripto(coinID:"BTC")
         }
-        
+        criptoKey = simboloMoedaList[row]
         
         return simboloMoedaList[row]
     }
     
-    func atualizarInformacoes(criptoInformations: CriptomoedaModel){
+    func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coinID: String){
         
-        ultimoPrecoLabel.text = String(format: "%.2f",criptoInformations.buy)
-        print()
+        var buy = Float(criptoInformations.buy)
+        var buyFormated = String(format: "%.2f",buy as! CVarArg)
+        
+ 
+        let defaults = UserDefaults()
+        let criptoID = defaults.float(forKey: "lastPrice\(coinID)")
+        
+        DispatchQueue.main.async {
+            self.lastPriceLabel.text = "R$ \(criptoID)"
+            
+            switch coinID {
+            case "BTC":
+                self.criptoImageView.image = #imageLiteral(resourceName: "iconBTC")
+            case "BCH":
+                self.criptoImageView.image = #imageLiteral(resourceName: "iconBCH")
+            case "XRP":
+                    self.criptoImageView.image = #imageLiteral(resourceName: "iconXRP")
+            case "LINK":
+                self.criptoImageView.image = #imageLiteral(resourceName: "iconLINK")
+            case "ETH":
+                self.criptoImageView.image = #imageLiteral(resourceName: "iconETH")
+            default:
+                self.criptoImageView.image = #imageLiteral(resourceName: "iconLTC")
+            }
+       
+        
     }
+    func erroRequest (error: Error){
+        print(error)
+    }
+    
     
 }
 
+}

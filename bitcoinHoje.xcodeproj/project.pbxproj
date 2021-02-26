@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8323BB9B25E5F0F900530DB0 /* CriptomoedasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323BB9A25E5F0F900530DB0 /* CriptomoedasData.swift */; };
+		833918D725E989E800636BEB /* CriptoDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833918D625E989E800636BEB /* CriptoDetalhesViewController.swift */; };
+		833918DD25E98DB400636BEB /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 833918DC25E98DB400636BEB /* SwiftUICharts */; };
 		83DC91BE25E8FCD000338EE5 /* CriptoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC91BD25E8FCD000338EE5 /* CriptoConfig.swift */; };
 		83DC91C925E934F700338EE5 /* CriptomoedaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC91C825E934F700338EE5 /* CriptomoedaModel.swift */; };
 		83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706925E5D97F005C8753 /* AppDelegate.swift */; };
@@ -39,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		8323BB9A25E5F0F900530DB0 /* CriptomoedasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptomoedasData.swift; sourceTree = "<group>"; };
+		833918D625E989E800636BEB /* CriptoDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoDetalhesViewController.swift; sourceTree = "<group>"; };
 		83DC91BD25E8FCD000338EE5 /* CriptoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoConfig.swift; sourceTree = "<group>"; };
 		83DC91C825E934F700338EE5 /* CriptomoedaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptomoedaModel.swift; sourceTree = "<group>"; };
 		83F1706625E5D97F005C8753 /* bitcoinHoje.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoinHoje.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833918DD25E98DB400636BEB /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				83F1706D25E5D97F005C8753 /* ViewController.swift */,
+				833918D625E989E800636BEB /* CriptoDetalhesViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -177,6 +182,9 @@
 			dependencies = (
 			);
 			name = bitcoinHoje;
+			packageProductDependencies = (
+				833918DC25E98DB400636BEB /* SwiftUICharts */,
+			);
 			productName = bitcoinHoje;
 			productReference = 83F1706625E5D97F005C8753 /* bitcoinHoje.app */;
 			productType = "com.apple.product-type.application";
@@ -248,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 83F1705D25E5D97F005C8753;
+			packageReferences = (
+				833918DB25E98DB400636BEB /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = 83F1706725E5D97F005C8753 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -293,6 +304,7 @@
 			files = (
 				83DC91BE25E8FCD000338EE5 /* CriptoConfig.swift in Sources */,
 				83F1706E25E5D97F005C8753 /* ViewController.swift in Sources */,
+				833918D725E989E800636BEB /* CriptoDetalhesViewController.swift in Sources */,
 				83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */,
 				83DC91C925E934F700338EE5 /* CriptomoedaModel.swift in Sources */,
 				8323BB9B25E5F0F900530DB0 /* CriptomoedasData.swift in Sources */,
@@ -623,6 +635,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		833918DB25E98DB400636BEB /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		833918DC25E98DB400636BEB /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 833918DB25E98DB400636BEB /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 83F1705E25E5D97F005C8753 /* Project object */;
 }

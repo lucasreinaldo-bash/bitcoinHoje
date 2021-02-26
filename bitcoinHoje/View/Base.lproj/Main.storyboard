@@ -24,47 +24,126 @@
                                 <rect key="frame" x="14" y="318" width="386" height="260"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-lk-pnY">
-                                <rect key="frame" x="207" y="448" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="zfH-TT-AAl">
+                                <rect key="frame" x="119.5" y="354.5" width="175.5" height="187"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCh-Sk-a2w">
+                                        <rect key="frame" x="38" y="0.0" width="98" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-lk-pnY">
+                                        <rect key="frame" x="0.0" y="13" width="175" height="57"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBCH" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-jB-6FZ">
+                                        <rect key="frame" x="37.5" y="64" width="100" height="100"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHg-nf-V6n">
+                                        <rect key="frame" x="43.5" y="157" width="88" height="30"/>
+                                        <state key="normal" title="Ver Detalhes"/>
+                                        <connections>
+                                            <segue destination="lzY-0m-INJ" kind="presentation" id="06q-gm-NY0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-hi-7tN">
                                 <rect key="frame" x="47" y="646" width="320" height="216"/>
                             </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Último Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCh-Sk-a2w">
-                                <rect key="frame" x="158" y="390" width="98" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DmL-hi-7tN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="47" id="BdW-he-sgg"/>
-                            <constraint firstItem="WJR-lk-pnY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Drx-4D-AqF"/>
                             <constraint firstItem="fu4-rw-p3B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F0X-hK-De7"/>
+                            <constraint firstItem="zfH-TT-AAl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GdI-12-0hm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DmL-hi-7tN" secondAttribute="trailing" constant="47" id="MaE-km-XMF"/>
                             <constraint firstItem="fu4-rw-p3B" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TYm-vT-ttI"/>
-                            <constraint firstItem="WJR-lk-pnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cQB-uh-Qet"/>
+                            <constraint firstItem="zfH-TT-AAl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XVF-hu-eWT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="DmL-hi-7tN" secondAttribute="bottom" id="dub-Nb-v7b"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="criptoImageView" destination="HJH-jB-6FZ" id="4MR-cB-RSa"/>
+                        <outlet property="lastPriceLabel" destination="WJR-lk-pnY" id="JSI-aY-EzI"/>
                         <outlet property="moedasPickerView" destination="DmL-hi-7tN" id="2MJ-AX-wAG"/>
-                        <outlet property="ultimoPrecoLabel" destination="WJR-lk-pnY" id="oc3-53-9Gn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="66.964285714285708"/>
         </scene>
+        <!--Cripto Detalhes View Controller-->
+        <scene sceneID="Di3-1D-MFv">
+            <objects>
+                <viewController id="lzY-0m-INJ" customClass="CriptoDetalhesViewController" customModule="bitcoinHoje" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Tq-au-hwf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-Lw-ihY">
+                                <rect key="frame" x="87" y="50" width="240" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-r8-Fpr">
+                                <rect key="frame" x="119.5" y="327.5" width="175.5" height="187"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq7-0w-4we">
+                                        <rect key="frame" x="38.5" y="0.0" width="98" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZY-Oz-mJQ">
+                                        <rect key="frame" x="0.0" y="13.5" width="175.5" height="57.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBCH" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-mw-Kks">
+                                        <rect key="frame" x="37.5" y="64" width="100" height="100"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-6o-DOh">
+                                        <rect key="frame" x="67" y="157" width="41" height="30"/>
+                                        <state key="normal" title="Voltar"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="XZ9-Di-Obm">
+                                <rect key="frame" x="-41" y="212" width="563" height="372"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-TW-MLT">
+                                <rect key="frame" x="87" y="334" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nPi-ba-6Qg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XZ9-Di-Obm" firstAttribute="centerX" secondItem="0Tq-au-hwf" secondAttribute="centerX" id="4AQ-bn-9JO"/>
+                            <constraint firstItem="FG8-r8-Fpr" firstAttribute="centerX" secondItem="0Tq-au-hwf" secondAttribute="centerX" id="R6l-Q1-oxi"/>
+                            <constraint firstItem="XZ9-Di-Obm" firstAttribute="centerY" secondItem="0Tq-au-hwf" secondAttribute="centerY" id="dhC-fz-byf"/>
+                            <constraint firstItem="FG8-r8-Fpr" firstAttribute="centerY" secondItem="0Tq-au-hwf" secondAttribute="centerY" id="qiy-wo-c3j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="wXF-TW-MLT" id="sSL-2O-aDS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0u-55-XVc" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821.73913043478262" y="58.928571428571423"/>
+        </scene>
     </scenes>
     <resources>
         <image name="card" width="386" height="260"/>
+        <image name="iconBCH" width="100" height="100"/>
         <image name="logo" width="190.5" height="102"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
