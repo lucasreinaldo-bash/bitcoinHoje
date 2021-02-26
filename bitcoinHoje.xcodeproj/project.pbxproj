@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8323BB9B25E5F0F900530DB0 /* bitcoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323BB9A25E5F0F900530DB0 /* bitcoinModel.swift */; };
+		8323BB9B25E5F0F900530DB0 /* CriptomoedasData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323BB9A25E5F0F900530DB0 /* CriptomoedasData.swift */; };
+		83DC91BE25E8FCD000338EE5 /* CriptoConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC91BD25E8FCD000338EE5 /* CriptoConfig.swift */; };
+		83DC91C925E934F700338EE5 /* CriptomoedaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83DC91C825E934F700338EE5 /* CriptomoedaModel.swift */; };
 		83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706925E5D97F005C8753 /* AppDelegate.swift */; };
 		83F1706C25E5D97F005C8753 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706B25E5D97F005C8753 /* SceneDelegate.swift */; };
 		83F1706E25E5D97F005C8753 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F1706D25E5D97F005C8753 /* ViewController.swift */; };
@@ -36,7 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		8323BB9A25E5F0F900530DB0 /* bitcoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bitcoinModel.swift; sourceTree = "<group>"; };
+		8323BB9A25E5F0F900530DB0 /* CriptomoedasData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptomoedasData.swift; sourceTree = "<group>"; };
+		83DC91BD25E8FCD000338EE5 /* CriptoConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptoConfig.swift; sourceTree = "<group>"; };
+		83DC91C825E934F700338EE5 /* CriptomoedaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriptomoedaModel.swift; sourceTree = "<group>"; };
 		83F1706625E5D97F005C8753 /* bitcoinHoje.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bitcoinHoje.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F1706925E5D97F005C8753 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F1706B25E5D97F005C8753 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +82,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		83DC91B725E8FC8E00338EE5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8323BB9A25E5F0F900530DB0 /* CriptomoedasData.swift */,
+				83DC91BD25E8FCD000338EE5 /* CriptoConfig.swift */,
+				83DC91C825E934F700338EE5 /* CriptomoedaModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		83DC91BB25E8FC9800338EE5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				83F1706F25E5D97F005C8753 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		83DC91BC25E8FCA800338EE5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				83F1706D25E5D97F005C8753 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		83F1705D25E5D97F005C8753 = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +133,12 @@
 			children = (
 				83F1706925E5D97F005C8753 /* AppDelegate.swift */,
 				83F1706B25E5D97F005C8753 /* SceneDelegate.swift */,
-				83F1706D25E5D97F005C8753 /* ViewController.swift */,
-				83F1706F25E5D97F005C8753 /* Main.storyboard */,
+				83DC91BC25E8FCA800338EE5 /* Controller */,
+				83DC91BB25E8FC9800338EE5 /* View */,
 				83F1707225E5D981005C8753 /* Assets.xcassets */,
 				83F1707425E5D981005C8753 /* LaunchScreen.storyboard */,
 				83F1707725E5D981005C8753 /* Info.plist */,
-				8323BB9A25E5F0F900530DB0 /* bitcoinModel.swift */,
+				83DC91B725E8FC8E00338EE5 /* Model */,
 			);
 			path = bitcoinHoje;
 			sourceTree = "<group>";
@@ -261,9 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83DC91BE25E8FCD000338EE5 /* CriptoConfig.swift in Sources */,
 				83F1706E25E5D97F005C8753 /* ViewController.swift in Sources */,
 				83F1706A25E5D97F005C8753 /* AppDelegate.swift in Sources */,
-				8323BB9B25E5F0F900530DB0 /* bitcoinModel.swift in Sources */,
+				83DC91C925E934F700338EE5 /* CriptomoedaModel.swift in Sources */,
+				8323BB9B25E5F0F900530DB0 /* CriptomoedasData.swift in Sources */,
 				83F1706C25E5D97F005C8753 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
