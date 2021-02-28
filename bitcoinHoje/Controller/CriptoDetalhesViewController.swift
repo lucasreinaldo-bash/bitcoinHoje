@@ -17,7 +17,6 @@ class CriptoDetalhesViewController: UIViewController, ChartViewDelegate {
         lineChart.delegate = self
         
         
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidLayoutSubviews() {
@@ -46,14 +45,12 @@ class CriptoDetalhesViewController: UIViewController, ChartViewDelegate {
         var dados = [ChartDataEntry]()
         
         dados.append(ChartDataEntry(x:Double(menorPreco), y: Double(menorPreco)))
-
         dados.append(ChartDataEntry(x:Double(maiorPreco), y: Double(maiorPreco)))
         dados.append(ChartDataEntry(x:Double(maiorPreco), y: Double(ultimoPreco)))
         
         
         let informacoesGrafico = LineChartDataSet(entries: dados, label: nomeCripto(sigla: criptoID))
         let chartData = LineChartData(dataSet: informacoesGrafico)
-        
         lineChart.data = chartData
       
        

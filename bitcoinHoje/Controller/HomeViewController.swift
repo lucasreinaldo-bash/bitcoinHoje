@@ -9,21 +9,22 @@
 
         class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CriptoManagerDelegate {
             
+            
+            //Instanciando elementos da View para serem tratadas
             @IBOutlet weak var highPriceLabel: UILabel!
             @IBOutlet weak var lastPriceLabel: UILabel!
             @IBOutlet weak var moedasPickerView: UIPickerView!
-
             @IBOutlet weak var criptoImageView: UIImageView!
             
             
 
-            
-            var precoList:[Double] = []
-            var moedasDestinoList: [Double] = []
+            //Variaveis utilizadas no tratamento do PickerView
             var criptoKey: String = "BTC"
             var simboloMoedaList: [String] = ["BITCOIN","XRP","LITECOIN","ETHEREUM","BITCOIN CASH","CHAILINK"]
             
             
+            
+            //Instanciando a classe responsavel em fazer a requisição de acesso com a API do Mercado Bitcoin e os demais tratamento dos dados retornados
             var criptoConfig = CriptoConfig()
             
             
@@ -113,10 +114,6 @@
                
                 
             }
-            func erroRequest (error: Error){
-           
-            }
-            
              
             
         }
@@ -134,7 +131,7 @@
                 let highPriceFormated = highPrice!.replacingOccurrences(of: "Optional(", with: "+", options: .literal, range: nil)
                 
                 
-             
+             //Se eu não utilizar esse objeto DispatchQueue, a UI ficará sobrecarregada e um erro em tempo de execução será retornado quando os dados em tempo real for setado para os Labels.
                 DispatchQueue.main.async {
                     self.lastPriceLabel.text = lastPriceFormated
                     self.highPriceLabel.text = "Maior preço em 24 hrs : \(highPriceFormated)"
