@@ -15,6 +15,12 @@ struct CriptomoedasData: Decodable{
     
     struct Ticker: Decodable {
         let buy:String
+        let last:String
+        let high:String
+        let low:String
+        
+        
+        //As variaveis foram criadas com o mesmo nome utilizado na API , para que a recuperação dos dados ocorra sem problemas
     }
     
 }

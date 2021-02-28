@@ -10,7 +10,9 @@ import Foundation
 
 struct CriptomoedaModel {
     
-    let buy:String
+    let ultimoPreco:String
+    let maiorPreco:String
+    let menorPreco:String
     
     
 }

@@ -1,0 +1,6 @@
+framework module Pods_bitcoinHojeTests {
+  umbrella header "Pods-bitcoinHojeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

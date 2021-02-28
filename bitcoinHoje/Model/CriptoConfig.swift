@@ -1,101 +1,131 @@
-//
-//  CriptomoedaConfig.swift
-//  bitcoinHoje
-//
-//  Created by Lucas Reinaldo on 26/02/21.
-//
+    //
+    //  CriptomoedaConfig.swift
+    //  bitcoinHoje
+    //
+    //  Created by Lucas Reinaldo on 26/02/21.
+    //
 
-import Foundation
+    import Foundation
 
 
-protocol CriptoManagerDelegate {
-    func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coinID: String)
-    func erroRequest (error: Error)
-}
-struct CriptoConfig{
-    
-    
-    var delegate: CriptoManagerDelegate?
-    
-    let mercadoBitcoinURL = "https://www.mercadobitcoin.net/api/"
-    
-    
-    
-    func buscarCripto(coinID:String){
-        let enderecoFinal = "\(mercadoBitcoinURL)\(coinID)/ticker"
-        
-        performRequest(with: enderecoFinal, with: coinID)
+    protocol CriptoManagerDelegate {
+        func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coinID: String)
+        func erroRequest (error: Error)
     }
-    
-    func performRequest(with enderecoFinal: String, with coinID: String){
+    struct CriptoConfig{
         
-        //Criando a URL
-        if let url = URL(string: enderecoFinal){
+        
+        var delegate: CriptoManagerDelegate?
+        
+        
+        //URL da API utilizada
+        let mercadoBitcoinURL = "https://www.mercadobitcoin.net/api/"
+        
+        
+        
+        //Metodo utilizado para buscar os valores referentes ao ID da cripto recebida por parametro
+        func buscarCripto(coinID:String){
+            let enderecoFinal = "\(mercadoBitcoinURL)\(coinID)/ticker"
             
-            //Criando a URLSession
-            let session = URLSession(configuration: .default)
+            performRequest(with: enderecoFinal, with: coinID)
+        }
+        
+        func performRequest(with enderecoFinal: String, with coinID: String){
             
-            //Iniciando tarefa para a sessao criada
-            
-            let task = session.dataTask(with: url){
-                (data, response, error) in
+            //Criando a URL
+            if let url = URL(string: enderecoFinal){
                 
+                //Criando a URLSession
+                let session = URLSession(configuration: .default)
                 
-                if error != nil {
-                    print("estouaqui")
-                    self.delegate?.erroRequest(error: error!)
-                    return
-                }
+                //Iniciando tarefa para a sessao criada
                 
-                if let safeData = data {
-                    if let cripto = self.parseJSON(safeData, coinID){
-                        self.delegate?.atualizarInformacoes(self, criptoInformations: cripto, coinID: coinID)
+                let task = session.dataTask(with: url){
+                    (data, response, error) in
+                    
+                    
+                    if error != nil {
+                        
+                   
+                        self.delegate?.erroRequest(error: error!)
+                        return
                     }
-                      }
-                
-                
+                    
+                    if let safeData = data {
+                        if let cripto = self.parseJSON(safeData, coinID){
+                            
+                            //Usando o delegate para se comunicar com a HomeViewController e atualizar as informacoes da View
+                            self.delegate?.atualizarInformacoes(self, criptoInformations: cripto, coinID: coinID)
+                        }
+                          }
+                    
+                    
+                }
+                task.resume()
             }
-            task.resume()
+            
+           
+            
+            
+        }
+        func parseJSON(_ criptoData:Data, _ coinID:String) -> CriptomoedaModel? {
+            
+            
+            //Instanciando o JSONDecoder para transformar o objeto json em objeto modelado de acordo com o CriptomoedasData
+            let decoder = JSONDecoder()
+            
+            do {
+                
+              let  decoderData = try decoder.decode(CriptomoedasData.self, from: criptoData)
+            
+                let ultimoPreco  = decoderData.ticker.last
+                let maiorPreco = decoderData.ticker.high
+                let menorPreco = decoderData.ticker.low
+                
+                //Adicionando os valores extraidos para a classe modelo
+                let criptomoedaModel = CriptomoedaModel(ultimoPreco: ultimoPreco, maiorPreco: maiorPreco, menorPreco: menorPreco)
+                
+                
+                
+                //Salvando os dados localmente atraves do UserDefaults
+                salvarLocalmente(coinID: coinID, lastPrice: ultimoPreco, highPrice: maiorPreco, lowPrice: menorPreco)
+                
+                return criptomoedaModel
+            
+            
+            }catch {
+                
+        
+                delegate?.erroRequest(error: error)
+                return nil
+            }
         }
         
+        func salvarLocalmente(coinID:String, lastPrice:String, highPrice:String, lowPrice:String){
+            
        
-        
-        
-    }
-    func parseJSON(_ criptoData:Data, _ coinID:String) -> CriptomoedaModel? {
-        
-        let decoder = JSONDecoder()
-        
-        do {
+            let ultimoPreco = lastPrice.currencyFormatting()
+            let maiorPreco = highPrice.currencyFormatting()
+            let menorPreco = lowPrice.currencyFormatting()
             
-          let  decoderData = try decoder.decode(CriptomoedasData.self, from: criptoData)
-        
-            let buy  = decoderData.ticker.buy 
+          
             
             
-            let criptomoedaModel = CriptomoedaModel(buy: buy)
+           //Instanciando o UserDefaults para armazenas as informacoes
+            let defaults = UserDefaults.standard
             
-            salvarLocalmente(coinID: coinID, lastPrice: buy)
+            defaults.setValue(ultimoPreco, forKey: "lastPrice\(coinID)")
+            defaults.setValue(maiorPreco, forKey: "highPrice\(coinID)")
+            defaults.setValue(menorPreco, forKey: "lowPrice\(coinID)")
             
-            return criptomoedaModel
-        
-        
-        }catch {
             
-    
-            delegate?.erroRequest(error: error)
-            return nil
+            //Separando valores no seu formato original para atribuir ao grafico de detalhes
+            defaults.setValue(Double(lastPrice), forKey: "lastPriceChart\(coinID)")
+            defaults.setValue(Double(highPrice), forKey: "highPriceChart\(coinID)")
+            defaults.setValue(Double(lowPrice), forKey: "lowPriceChart\(coinID)")
+            
         }
     }
-    
-    func salvarLocalmente(coinID:String, lastPrice:String){
-        
-        let defaults = UserDefaults.standard
-        
-        defaults.setValue(Float(lastPrice), forKey: "lastPrice\(coinID)")
-        
-    }
-}
 
 
 

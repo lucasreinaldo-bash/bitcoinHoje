@@ -8,51 +8,60 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="bitcoinHoje" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="bitcoinHoje" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="VHB-kY-pnt">
-                                <rect key="frame" x="87" y="54" width="240" height="102"/>
+                                <rect key="frame" x="87" y="50" width="240" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="fu4-rw-p3B">
-                                <rect key="frame" x="14" y="318" width="386" height="260"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="cardMoeda" translatesAutoresizingMaskIntoConstraints="NO" id="fu4-rw-p3B">
+                                <rect key="frame" x="14" y="291" width="386" height="331"/>
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="zfH-TT-AAl">
-                                <rect key="frame" x="119.5" y="354.5" width="175.5" height="187"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zfH-TT-AAl">
+                                <rect key="frame" x="97.5" y="289" width="219" height="264"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pCh-Sk-a2w">
-                                        <rect key="frame" x="38" y="0.0" width="98" height="20"/>
+                                        <rect key="frame" x="60.5" y="0.0" width="98" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJR-lk-pnY">
-                                        <rect key="frame" x="0.0" y="13" width="175" height="57"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
+                                        <rect key="frame" x="36" y="20.5" width="147.5" height="48.5"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="42"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBCH" translatesAutoresizingMaskIntoConstraints="NO" id="HJH-jB-6FZ">
-                                        <rect key="frame" x="37.5" y="64" width="100" height="100"/>
+                                        <rect key="frame" x="59.5" y="69" width="100" height="100"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHg-nf-V6n">
-                                        <rect key="frame" x="43.5" y="157" width="88" height="30"/>
-                                        <state key="normal" title="Ver Detalhes"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maior preço: R$ 290.22,70" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bl1-zy-yqR">
+                                        <rect key="frame" x="24" y="169" width="171.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lHg-nf-V6n">
+                                        <rect key="frame" x="0.0" y="186" width="219" height="78"/>
+                                        <state key="normal" image="btnGrafico"/>
                                         <connections>
-                                            <segue destination="lzY-0m-INJ" kind="presentation" id="06q-gm-NY0"/>
+                                            <segue destination="hUq-n0-XAi" kind="presentation" identifier="grafico" id="638-Hf-VW4"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-hi-7tN">
-                                <rect key="frame" x="47" y="646" width="320" height="216"/>
+                            <pickerView alpha="0.75" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DmL-hi-7tN">
+                                <rect key="frame" x="47" y="592" width="320" height="216"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" playsSound="YES" updatesFrequently="YES"/>
+                                </accessibility>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -69,6 +78,7 @@
                     </view>
                     <connections>
                         <outlet property="criptoImageView" destination="HJH-jB-6FZ" id="4MR-cB-RSa"/>
+                        <outlet property="highPriceLabel" destination="bl1-zy-yqR" id="Eyh-KR-d6n"/>
                         <outlet property="lastPriceLabel" destination="WJR-lk-pnY" id="JSI-aY-EzI"/>
                         <outlet property="moedasPickerView" destination="DmL-hi-7tN" id="2MJ-AX-wAG"/>
                     </connections>
@@ -78,71 +88,38 @@
             <point key="canvasLocation" x="140.57971014492756" y="66.964285714285708"/>
         </scene>
         <!--Cripto Detalhes View Controller-->
-        <scene sceneID="Di3-1D-MFv">
+        <scene sceneID="rFm-4Y-oTF">
             <objects>
-                <viewController id="lzY-0m-INJ" customClass="CriptoDetalhesViewController" customModule="bitcoinHoje" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0Tq-au-hwf">
+                <viewController id="hUq-n0-XAi" customClass="CriptoDetalhesViewController" customModule="bitcoinHoje" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="48y-UW-o9C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="p2D-Lw-ihY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="HTY-Mg-13z">
                                 <rect key="frame" x="87" y="50" width="240" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="-7" translatesAutoresizingMaskIntoConstraints="NO" id="FG8-r8-Fpr">
-                                <rect key="frame" x="119.5" y="327.5" width="175.5" height="187"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Último Preço" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oq7-0w-4we">
-                                        <rect key="frame" x="38.5" y="0.0" width="98" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZY-Oz-mJQ">
-                                        <rect key="frame" x="0.0" y="13.5" width="175.5" height="57.5"/>
-                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="50"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconBCH" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-mw-Kks">
-                                        <rect key="frame" x="37.5" y="64" width="100" height="100"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2x-6o-DOh">
-                                        <rect key="frame" x="67" y="157" width="41" height="30"/>
-                                        <state key="normal" title="Voltar"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="XZ9-Di-Obm">
-                                <rect key="frame" x="-41" y="212" width="563" height="372"/>
-                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-TW-MLT">
-                                <rect key="frame" x="87" y="334" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q17-7e-PZg">
+                                <rect key="frame" x="187" y="778" width="41" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
+                                <state key="normal" title="Voltar"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" id="D4A-q8-PGD"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="nPi-ba-6Qg"/>
+                        <viewLayoutGuide key="safeArea" id="o65-ZR-MLX"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="XZ9-Di-Obm" firstAttribute="centerX" secondItem="0Tq-au-hwf" secondAttribute="centerX" id="4AQ-bn-9JO"/>
-                            <constraint firstItem="FG8-r8-Fpr" firstAttribute="centerX" secondItem="0Tq-au-hwf" secondAttribute="centerX" id="R6l-Q1-oxi"/>
-                            <constraint firstItem="XZ9-Di-Obm" firstAttribute="centerY" secondItem="0Tq-au-hwf" secondAttribute="centerY" id="dhC-fz-byf"/>
-                            <constraint firstItem="FG8-r8-Fpr" firstAttribute="centerY" secondItem="0Tq-au-hwf" secondAttribute="centerY" id="qiy-wo-c3j"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="chartView" destination="wXF-TW-MLT" id="sSL-2O-aDS"/>
-                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0u-55-XVc" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tag-fb-7sR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821.73913043478262" y="58.928571428571423"/>
+            <point key="canvasLocation" x="1238" y="67"/>
         </scene>
     </scenes>
     <resources>
-        <image name="card" width="386" height="260"/>
+        <image name="btnGrafico" width="219" height="78"/>
+        <image name="cardMoeda" width="336" height="313"/>
         <image name="iconBCH" width="100" height="100"/>
         <image name="logo" width="190.5" height="102"/>
         <systemColor name="systemBackgroundColor">
