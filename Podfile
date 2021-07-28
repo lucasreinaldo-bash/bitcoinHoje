@@ -6,6 +6,7 @@ target 'bitcoinHoje' do
   use_frameworks!
 
   pod 'Charts'
+  pod 'PKHUD'
 	
   # Pods for bitcoinHoje
 

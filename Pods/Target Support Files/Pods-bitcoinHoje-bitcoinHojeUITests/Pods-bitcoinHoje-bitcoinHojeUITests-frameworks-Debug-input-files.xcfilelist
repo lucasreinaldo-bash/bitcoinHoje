@@ -1,2 +1,3 @@
 ${PODS_ROOT}/Target Support Files/Pods-bitcoinHoje-bitcoinHojeUITests/Pods-bitcoinHoje-bitcoinHojeUITests-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Charts/Charts.framework
+${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework

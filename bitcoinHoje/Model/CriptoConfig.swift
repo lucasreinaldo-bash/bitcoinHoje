@@ -9,10 +9,11 @@
         
         
         protocol CriptoManagerDelegate {
-            func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coinID: String)
+            func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coin: CriptoCurrency)
             func erroRequest (error: Error)
         }
-        struct CriptoConfig{
+        
+        class CriptoConfig{
             
             
             var delegate: CriptoManagerDelegate?
@@ -24,13 +25,12 @@
             
             
             //Metodo utilizado para buscar os valores referentes ao ID da cripto recebida por parametro
-            func buscarCripto(coinID:String){
-                let enderecoFinal = "\(mercadoBitcoinURL)\(coinID)/ticker"
-                
-                performRequest(with: enderecoFinal, with: coinID)
+            func buscarCripto(coin: CriptoCurrency){
+                let enderecoFinal = "\(mercadoBitcoinURL)\(coin.id)/ticker"
+                performRequest(with: enderecoFinal, with: coin)
             }
             
-            func performRequest(with enderecoFinal: String, with coinID: String){
+            func performRequest(with enderecoFinal: String, with coin: CriptoCurrency){
                 
                 //Criando a URL
                 if let url = URL(string: enderecoFinal){
@@ -41,8 +41,11 @@
                     //Iniciando tarefa para a sessao criada
                     
                     let task = session.dataTask(with: url){
-                        (data, response, error) in
+                        [weak self] (data, response, error) in
                         
+                        guard let self = self else {
+                            return
+                        }
                         
                         if error != nil {
                             
@@ -54,10 +57,10 @@
                         }
                         
                         if let safeData = data {
-                            if let cripto = self.parseJSON(safeData, coinID){
+                            if let cripto = self.parseJSON(safeData, coin.id){
                                 
                                 //Usando o delegate para se comunicar com a HomeViewController e atualizar as informacoes da View em tempo real
-                                self.delegate?.atualizarInformacoes(self, criptoInformations: cripto, coinID: coinID)
+                                self.delegate?.atualizarInformacoes(self, criptoInformations: cripto, coin: coin)
                             }
                         }
                         

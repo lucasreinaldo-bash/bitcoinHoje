@@ -1,171 +1,167 @@
-        //
-        //  ViewController.swift
-        //  bitcoinHoje
-        //
-        //  Created by Lucas Reinaldo on 23/02/21.
-        //
+import UIKit
+import PKHUD
 
-        import UIKit
-
-        class HomeViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, CriptoManagerDelegate {
-            
-            
-            //Instanciando elementos da View para serem tratadas
-            @IBOutlet weak var highPriceLabel: UILabel!
-            @IBOutlet weak var lastPriceLabel: UILabel!
-            @IBOutlet weak var moedasPickerView: UIPickerView!
-            @IBOutlet weak var criptoImageView: UIImageView!
-            
-            
-
-            //Variaveis utilizadas no tratamento do PickerView
-            var criptoKey: String = "BTC"
-            var simboloMoedaList: [String] = ["BITCOIN","XRP","LITECOIN","ETHEREUM","BITCOIN CASH","CHAILINK"]
-            
-            
-            
-            //Instanciando a classe responsavel em fazer a requisição de acesso com a API do Mercado Bitcoin e os demais tratamento dos dados retornados
-            var criptoConfig = CriptoConfig()
-            
-            
-
-            override func viewDidLoad() {
-                super.viewDidLoad()
-                criptoConfig.delegate = self
-                moedasPickerView.dataSource = self
-                moedasPickerView.delegate = self
-                criptoConfig.buscarCripto(coinID:"BTC")
-                
-              
-                
-            }
-         
-            //Funcoes responsaveis em popular o PickerView
-            
-            func numberOfComponents(in pickerView: UIPickerView) -> Int {
-               1
-            }
-            
-            func pickerView(_ moedasPickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-              return   simboloMoedaList.count
-            }
-            
-            func pickerView(_ moedasPickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-                
-                
-                
-                
-                //Estrutura Case que serve para avaliar a seleção do usuario e atribuir a sigla correspondente
-                //Essa sigla será utilizada para concatenar a URL da api do Mercado Bitcoin
-                switch simboloMoedaList[row] {
-                case "BITCOIN":
-                criptoConfig.buscarCripto(coinID:"BTC")
-                    criptoKey = "BTC"
-                case "XRP":
-                criptoConfig.buscarCripto(coinID:"XRP")
-                    criptoKey = "XRP"
-                case "BITCOIN CASH":
-                criptoConfig.buscarCripto(coinID:"BCH")
-                    criptoKey = "BCH"
-                case "ETHEREUM":
-                criptoConfig.buscarCripto(coinID:"ETH")
-                    criptoKey = "ETH"
-                case "CHAILINK":
-                criptoConfig.buscarCripto(coinID:"LINK")
-                    criptoKey = "LINK"
-                case "LITECOIN":
-                criptoConfig.buscarCripto(coinID:"LTC")
-                    criptoKey = "LTC"
-                default:
-                    criptoConfig.buscarCripto(coinID:"BTC")
-                    criptoKey = "BTC"
-                }
-                
-                
-                return simboloMoedaList[row]
-            }
-            
-            func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coinID: String){
-                
-
-               
-                //Preciso do DispatchQuee para atualizar os valores da View que sao provinientes do delegate
-                DispatchQueue.main.async {
-                    self.lastPriceLabel.text = criptoInformations.ultimoPreco.currencyFormatting()
-                    self.highPriceLabel.text = "Maior preço em 24 hrs : \(criptoInformations.maiorPreco.currencyFormatting())"
-                
-                    
-                    //Alterando as imagens de acordo com a sigla da Criptomoeda
-                    //As imagens estão salvas no Assets, e são instanciadas utilizando o Image Literal
-                    switch coinID {
-                    case "BTC":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconBTC")
-                    case "BCH":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconBCH")
-                    case "XRP":
-                            self.criptoImageView.image = #imageLiteral(resourceName: "iconXRP")
-                    case "LINK":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconLINK")
-                    case "ETH":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconETH")
-                    default:
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconLTC")
-                    }
-               
-                
-            }
-             
-            
+class HomeViewController: UIViewController{
+    
+    private lazy var logoView = buildLogoView()
+    private lazy var cardCriptoView = CardCriptoView()
+    private lazy var currencyPickerView =  buildPickerView()
+    private lazy var stackView = buildStackView()
+    
+    
+    var criptoKey = CriptoCurrency.list.first!
+    var simboloMoedaList = CriptoCurrency.list
+    var criptoConfig = CriptoConfig()
+    
+    private let navigationBarColor = UIColor.white
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureNavigationBar()
+        configureComponents()
+        configureDelegate()
+        
+        
+    }
+    
+    private func configureNavigationBar() {
+        if #available(iOS 13, *) {
+            navigationItem.standardAppearance = UINavigationBarAppearance()
+            navigationItem.standardAppearance?.backgroundColor = navigationBarColor
+            navigationItem.standardAppearance?.shadowColor = navigationBarColor
         }
-            
-            
-            //Metodo acionado quando há erro de conexão com a API
-            //Caso o dispostivo esteja sem conexão com a internet, as informações atribuidas aos labels serão do banco de dados local
-            
-            func erroRequest(error: Error) {
-                let defaults = UserDefaults()
-                
-                let lastPrice = defaults.string(forKey: "lastPrice\(criptoKey)")
-                let highPrice = defaults.string(forKey: "highPrice\(criptoKey)")
-                let lastPriceFormated = lastPrice!.replacingOccurrences(of: "Optional(", with: "+", options: .literal, range: nil)
-                let highPriceFormated = highPrice!.replacingOccurrences(of: "Optional(", with: "+", options: .literal, range: nil)
-                
-                
-             //Se eu não utilizar esse objeto DispatchQueue, a UI ficará sobrecarregada e um erro em tempo de execução será retornado quando os dados em tempo real for setado para os Labels.
-                DispatchQueue.main.async {
-                    self.lastPriceLabel.text = lastPriceFormated
-                    self.highPriceLabel.text = "Maior preço em 24 hrs : \(highPriceFormated)"
-                    
-                    //Alterando as imagens de acordo com a sigla da Criptomoeda
-                    //As imagens estão salvas no Assets, e são instanciadas utilizando o Image Literal
-                    
-                    switch self.criptoKey {
-                    case "BTC":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconBTC")
-                    case "BCH":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconBCH")
-                    case "XRP":
-                            self.criptoImageView.image = #imageLiteral(resourceName: "iconXRP")
-                    case "LINK":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconLINK")
-                    case "ETH":
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconETH")
-                    default:
-                        self.criptoImageView.image = #imageLiteral(resourceName: "iconLTC")
-                    }
-               
-                
-            }
-            }
-            
-            override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-                //Passando por parametro o ID da moeda
-                //Essa ID será tratado para acessar a instancia do UserDefaults correspondente a criptoselecionada
-                if segue.identifier == "grafico" {
-                    let destinationVC = segue.destination as! CriptoDetalhesViewController
-                    destinationVC.criptoID = criptoKey
-                }
-            }
-            
-            
+        
+        else {
+            navigationController?.navigationBar.barTintColor = navigationBarColor
         }
+        
+        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.tintColor = .white
+        
+        navigationItem.leftBarButtonItem?.tintColor = .white
+    }
+    
+    private func configureComponents(){
+        
+        view.backgroundColor = .white
+        view.addSubview(stackView)
+        PKHUD.sharedHUD.contentView = PKHUDSystemActivityIndicatorView()
+        stackView.addArrangedSubview(logoView)
+        stackView.addArrangedSubview(cardCriptoView)
+        stackView.addArrangedSubview(currencyPickerView)
+        
+        
+        cardCriptoView.dropShadow()
+        
+        
+        
+        NSLayoutConstraint.activate([
+            
+//            logoView.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 20),
+//            logoView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 40),
+//            logoView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -40),
+//
+            stackView.topAnchor.constraint(equalTo: view.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stackView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            currencyPickerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20)
+            
+            
+        ])
+    }
+    
+    private func configureDelegate(){
+        criptoConfig.delegate = self
+        currencyPickerView.dataSource = self
+        currencyPickerView.delegate = self
+        criptoConfig.buscarCripto(coin: CriptoCurrency.list.first!)
+    }
+}
+
+//MARK:- UIPickerViewDelegate
+
+extension HomeViewController: UIPickerViewDataSource,UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ moedasPickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return   simboloMoedaList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        PKHUD.sharedHUD.show()
+
+        let currency = simboloMoedaList[row]
+        criptoKey = currency
+        criptoConfig.buscarCripto(coin: currency)
+        
+        
+    }
+    
+    func pickerView(_ moedasPickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return simboloMoedaList[row].title
+        
+    }
+    
+}
+
+//MARK:- CriptoConfigDelegate
+
+extension HomeViewController: CriptoManagerDelegate{
+    func atualizarInformacoes(_ criptoConfig: CriptoConfig,  criptoInformations: CriptomoedaModel, coin: CriptoCurrency){
+        DispatchQueue.main.sync {
+            HUD.hide()
+        }
+        cardCriptoView.setCriptoCurrency(coin)
+        cardCriptoView.setMoneyInfo(criptoInformations.ultimoPreco, highPrice: criptoInformations.maiorPreco)
+    
+    }
+    
+    func erroRequest(error: Error) {
+        let defaults = UserDefaults()
+    }
+}
+
+//MARK:- UIFactory
+
+extension HomeViewController {
+    
+    private func buildPickerView() -> UIPickerView {
+        let picker = UIPickerView()
+        picker.translatesAutoresizingMaskIntoConstraints =  false
+        return picker
+    }
+    
+    private func buildStackView() -> UIStackView {
+        
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.spacing = 1
+        stack.distribution = .fillEqually
+        stack.alignment = .center
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }
+    
+    private func buildLogoView() -> UIImageView{
+        
+        let label = UIImageView(image: AssetsIcons.logo)
+//        label.widthAnchor.constraint(equalToConstant: 100).isActive = true
+//        label.heightAnchor.constraint(equalToConstant: 40).isActive = true
+//        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        return label
+    }
+    
+    
+}
+
+
+
+
+
+
